@@ -35,3 +35,6 @@ Tecnologias atuais serão diferenciais na avaliação do seu projeto.
 - Suba o código em seu repositório no Github
 - Envie o link do seu repositório para jonsnow@adsim.com.br
 - Caso não saiba como trabalhar com o Git, Envie um zip do seu código para joffrey@adsim.com.br
+
+### README da aplicação desenvolvida para atender Sr.Samwell
+- [Clique aqui para acessar a Documentação](/README_PROJETO.md)
