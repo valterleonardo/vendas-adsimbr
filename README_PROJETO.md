@@ -1,11 +1,12 @@
 # Bem vindo a Aplicação que ajudará Sr.Samwell a controlar seus pedidos
 
-## Configurações
+## Requisitos
  - Tenha certeza que o java 8 está instalado e configurado na sua máquina
  - Tem o docker instalado? Para conexão com o Banco de Dados, utilizo PostGreSQL dockerizado.
+ - Maven instalado, necessário para baixar dependências e iniciar o projeto.
  
 ### Docker
- - Para instalar docker em máquina linux: sudo apt-get install docker.io
+ - Para instalar docker em máquina linux: `sudo apt-get install docker.io`
  - https://www.docker.com/
 
 #### Baixando e inicializando container PostGreSQL
@@ -21,3 +22,10 @@
  - `docker ps` - verificar se o container está de pé.
  -  http://localhost:15432 - acessar o PgAdmin4.
  - Para montar o server PostGreSQL no PgAdmin, vá em SERVER, NEW SERVER. Coloque o nome do container `docker-postgresql` como host, usuário `postgres` e senha `definida no docker run do container postgres`
+ 
+#### Iniciando a Aplicação
+ - Crie uma pasta para o projeto
+ - Baixe o projeto ou dê um `git clone`
+ - Dê um clean no projeto com o maven `mvn clean`
+ - Compile o projeto `mvn install`
+ - Inicialize o projeto - `mvn spring-boot:run`
