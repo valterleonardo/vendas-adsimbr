@@ -13,12 +13,15 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
 @Entity
 @Data
 @Table(name = "FORNECEDOR")
 @SequenceGenerator(name = "seq_fornecedor", sequenceName = "seq_fornecedor_id", allocationSize = 1)
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Fornecedor implements Serializable {
 
 	private static final long serialVersionUID = 1893857868091200781L;
@@ -27,10 +30,11 @@ public class Fornecedor implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq_fornecedor")
 	private Integer id;
 	private String nome;
+	private String email;
 	
 	@Column(columnDefinition="BOOLEAN NOT NULL DEFAULT true")
-	private boolean ativo;
+	private boolean ativo = true;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date dataCriacao;
+	private Date dataCriacao = new Date();
 }
