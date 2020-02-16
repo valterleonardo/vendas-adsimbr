@@ -23,7 +23,7 @@ public class SwaggerConfig {
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("estoque.controle.ms"))
+                .apis(RequestHandlerSelectors.basePackage("leonardo.valter.vendas"))
                 .paths(regex("/api.*"))
                 .build()
                 .apiInfo(metaInfo());

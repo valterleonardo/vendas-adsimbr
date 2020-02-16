@@ -1,6 +1,7 @@
 package leonardo.valter.vendas.entity.repository.produto;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -23,9 +24,10 @@ public class ProdutoServiceImpl implements ProdutoService {
 
             return produto;
 			
-		} catch (Exception e) {
+		} catch (NoResultException e) {
 			return null;
-			
+		} catch (Exception e) {
+			throw e;		
 		} finally {
 			entityManager.close();
 		} 
