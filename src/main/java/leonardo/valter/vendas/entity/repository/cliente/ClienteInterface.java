@@ -1,5 +1,5 @@
 package leonardo.valter.vendas.entity.repository.cliente;
 
-public interface ClienteService {
+public interface ClienteInterface {
 
 }

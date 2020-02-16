@@ -1,5 +1,5 @@
 package leonardo.valter.vendas.entity.repository.estoque;
 
-public interface EstoqueService {
+public interface EstoqueInterface {
 
 }

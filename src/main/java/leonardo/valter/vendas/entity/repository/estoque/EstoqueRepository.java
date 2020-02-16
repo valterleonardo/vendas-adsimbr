@@ -2,8 +2,8 @@ package leonardo.valter.vendas.entity.repository.estoque;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import leonardo.valter.vendas.entity.Produto;
+import leonardo.valter.vendas.entity.Estoque;
 
-public interface EstoqueRepository  extends JpaRepository<Produto, Integer>, EstoqueService {
+public interface EstoqueRepository  extends JpaRepository<Estoque, Integer>, EstoqueInterface {
 	
 }

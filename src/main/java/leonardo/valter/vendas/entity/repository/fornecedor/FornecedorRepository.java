@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import leonardo.valter.vendas.entity.Fornecedor;
 
-public interface FornecedorRepository extends JpaRepository<Fornecedor, Integer>, FornecedorService {
+public interface FornecedorRepository extends JpaRepository<Fornecedor, Integer>, FornecedorInterface {
 
 }

@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import leonardo.valter.vendas.entity.Pedido;
 
-public interface PedidoRepository extends JpaRepository<Pedido, Integer>, PedidoService {
+public interface PedidoRepository extends JpaRepository<Pedido, Integer>, PedidoInterface {
 
 }

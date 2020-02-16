@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import leonardo.valter.vendas.entity.Produto;
 
 @Repository
-public class ProdutoServiceImpl implements ProdutoService {
+public class ProdutoInterfaceImpl implements ProdutoInterface {
 	
 	@PersistenceContext
     private EntityManager entityManager;
