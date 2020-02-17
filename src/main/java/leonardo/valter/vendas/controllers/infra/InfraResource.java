@@ -34,7 +34,6 @@ public class InfraResource {
 	
 	@GetMapping("/ping")
 	public ResponseEntity<String> ping() {	
-		log.info("RequestService: /ping");		
 	    return new ResponseEntity<>("Pong!", HttpStatus.OK);
 	}
 	

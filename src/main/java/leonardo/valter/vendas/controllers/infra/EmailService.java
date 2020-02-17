@@ -8,6 +8,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import leonardo.valter.vendas.entity.Pedido;
+import leonardo.valter.vendas.entity.dict.StatusPedido;
 import leonardo.valter.vendas.entity.repository.pedido.PedidoRepository;
 
 @Service
@@ -17,7 +18,7 @@ public class EmailService {
 	@Autowired private PedidoRepository pedidoRepository;
 
 	public String enviarPedidosParaFornecedores() {
-		List<Pedido> pedidos = pedidoRepository.findAll();
+		List<Pedido> pedidos = pedidoRepository.findByStatus(StatusPedido.NOVO);
 		return enviarEmail(pedidos);
 		
 	}
@@ -33,12 +34,18 @@ public class EmailService {
 			mensagem.setFrom("no-reply@valterleonardo.com.br");
 			
 			try {
-				mailSender.send(mensagem);				
+				mailSender.send(mensagem);
+				atualizarStatusPedido(pedido);
 			} catch (Exception e) {
 				e.printStackTrace();
 				return "Erro ao enviar email";
 			}	
 		}
 		return "Emails enviados com sucesso!";
+	}
+
+	private void atualizarStatusPedido(Pedido pedido) {
+		pedido.setStatus(StatusPedido.ENVIADO);
+		pedidoRepository.save(pedido);
 	}
 }
