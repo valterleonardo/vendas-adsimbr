@@ -32,10 +32,14 @@ public class PedidoResourceWeb {
 	}
 	
 	@PostMapping(value = "/cadastrarPedido")
-	public String form(Pedido pedido) {
+	public ModelAndView form(Pedido pedido) {
 		
 		pedidoRepository.save(pedido);
-		return "redirect:/pedidos";
+		
+		ModelAndView mv = new ModelAndView("pedido/formPedido");
+		mv.addObject("mensagem", "Pedido cadastrado com sucesso!");
+		
+		return mv;
 	}
 	
 	@GetMapping(value = "/pedidos")

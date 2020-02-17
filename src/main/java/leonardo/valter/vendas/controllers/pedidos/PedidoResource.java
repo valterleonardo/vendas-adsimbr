@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import leonardo.valter.vendas.entity.Pedido;
+import leonardo.valter.vendas.entity.dict.StatusPedido;
 import leonardo.valter.vendas.entity.repository.pedido.PedidoRepository;
 
 @RestController
@@ -26,7 +27,7 @@ public class PedidoResource {
 	@GetMapping
 	public ResponseEntity<List<Pedido>> buscarPedidos(){
 		
-		List<Pedido> listaPedidos = pedidoRepository.findAll();
+		List<Pedido> listaPedidos = pedidoRepository.findByStatus(StatusPedido.NOVO);
 		return new ResponseEntity<List<Pedido>>(listaPedidos, HttpStatus.ACCEPTED);
 	}
 	

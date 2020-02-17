@@ -1,4 +1,4 @@
-package leonardo.valter.vendas.controllers.infra;
+package leonardo.valter.vendas.service;
 
 import java.util.List;
 

@@ -4,6 +4,8 @@
  - Tenha certeza que o java 8 está instalado e configurado na sua máquina
  - Tem o docker instalado? Para conexão com o Banco de Dados, utilizo PostGreSQL dockerizado.
  - Maven instalado, necessário para baixar dependências e iniciar o projeto.
+ - `lombok` - Muito útil, evita escrever getter setter e etc de um objeto/entidade
+ - https://projectlombok.org/setup/eclipse (lombok precisa ser inserido ao BuildPath da aplicação)
  
 ### Docker
  - Para instalar docker em máquina linux: `sudo apt-get install docker.io`
@@ -22,6 +24,14 @@
  - `docker ps` - verificar se o container está de pé.
  -  http://localhost:15432 - acessar o PgAdmin4.
  - Para montar o server PostGreSQL no PgAdmin, vá em SERVER, NEW SERVER. Coloque o nome do container `docker-postgresql` como host, usuário `postgres` e senha `definida no docker run do container postgres`
+ 
+#### Ajustar as configurações para funcionar o EMAIL
+ - No arquivo `application.properties` altere os dados abaixo:
+ - `spring.mail.properties.mail.smtp.ssl.enable=${SE_UTILIZA_TLS_MARQUE_TRUE_OU_FALSE}`
+ - `spring.mail.host=${SERVIDOR_SMTP}`
+ - `spring.mail.port=${PORTA_SMTP_SAIDA}`
+ - `spring.mail.username=${EMAIL_A_SER_UTILIZADO}`
+ - `spring.mail.password=${SENHA_DO_EMAIL}`
  
 #### Iniciando a Aplicação
  - Crie uma pasta para o projeto
